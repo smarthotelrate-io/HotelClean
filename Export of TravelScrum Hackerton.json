@@ -1,0 +1,384 @@
+{
+  "id": "bafd24b9-e7d0-430b-95e7-5de2b1b6b267",
+  "revisionId": "da49e839-66d6-4bca-ba7d-fed3f27ddce2",
+  "trigger": "onReceivedSMS",
+  "options": {
+    "callbacks": [],
+    "targets": [
+      "12014222788",
+      "447451286900"
+    ],
+    "variables": []
+  },
+  "metadata": {
+    "title": "TravelScrum Hackerton",
+    "templateId": "feedbackBot",
+    "isDraft": false,
+    "triggerIntent": ""
+  },
+  "steps": [
+    {
+      "id": "27857712-0823-4b96-b1e2-a72c483f9919",
+      "action": "sendSMS",
+      "options": {
+        "payload": "Are you ready for your upcoming stay at the Hilton Midtown Manhattan? We're following the latest guidelines for cleaning and disinfection. These are unique times, and rest assured, your health and safety is our highest priority.\n\nOnce you check-in, we can provide you with information on when your room was last cleaned with our CleanHotel service.\n\nReply STOP at any time to opt-out from receiving SMS messages.",
+        "originator": "{{recipient}}",
+        "recipients": {
+          "msisdns": [
+            "{{originator}}"
+          ]
+        },
+        "intent": "sendReply",
+        "label": "Initial",
+        "originatorType": "text"
+      }
+    },
+    {
+      "id": "f09a08a6-5789-4229-b5ab-9f6b88452ef1",
+      "action": "await",
+      "options": {
+        "source": "",
+        "target": "",
+        "trigger": "awaitForDuration",
+        "variables": {},
+        "expiryAt": "3 seconds",
+        "intent": "awaitForDuration"
+      }
+    },
+    {
+      "id": "d5787fc4-6d9d-4449-9d75-d996ca93fe36",
+      "action": "sendSMS",
+      "options": {
+        "payload": "Hi, again, and welcome to the Hilton Midtown Manhattan! We wanted to let you know that your room (1205) was last cleaned on Tuesday, June 9, 2020 at 3:42pm for 35 minutes.\n\nWould you like info on other areas of the hotel? You can respond with the following:\n\nP for public areas\nR for restrooms\nE for elevators\nM for room cleaning details",
+        "originator": "{{recipient}}",
+        "recipients": {
+          "msisdns": [
+            "{{originator}}"
+          ]
+        },
+        "intent": "sendReply",
+        "label": "Checkin",
+        "originatorType": "text"
+      }
+    },
+    {
+      "id": "a596d5ce-36be-48ea-90f4-21ffe2156495",
+      "action": "await",
+      "options": {
+        "source": "{{originator}}",
+        "target": "{{recipient}}",
+        "trigger": "onReceivedSMS",
+        "variables": {
+          "responseVar": "response"
+        },
+        "expiryAt": "3 hours",
+        "cases": [
+          {
+            "conditions": [
+              {
+                "variable": "{{awaitStatusVar}}",
+                "operator": "==",
+                "value": "replied"
+              }
+            ],
+            "steps": []
+          }
+        ],
+        "intent": "await"
+      }
+    },
+    {
+      "id": "0992160c-2c1f-4880-87da-e2b0da55e102",
+      "action": "switch",
+      "options": {
+        "cases": [
+          {
+            "conditions": [
+              {
+                "variable": "{{response}}",
+                "operator": "==",
+                "value": "P"
+              }
+            ],
+            "steps": [
+              {
+                "id": "28095509-1c5e-41c7-90d1-568af6663e2d",
+                "action": "sendSMS",
+                "options": {
+                  "payload": "Here you go... Our lobby area was last cleaned on Tuesday, June 9, 2020 at 3:42pm.\n\nThe breakfast area was last cleaned today at 1:15pm.\n\nWould you like info on other areas of the hotel? You can respond with the following:\n\nR for restrooms\nE for elevators\nM for room cleaning details",
+                  "originator": "{{recipient}}",
+                  "recipients": {
+                    "msisdns": [
+                      "{{originator}}"
+                    ]
+                  },
+                  "intent": "sendReply",
+                  "originatorType": "text"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{response}}",
+                "operator": "==",
+                "value": "E"
+              }
+            ],
+            "steps": [
+              {
+                "id": "e325c1c3-8db5-4416-b966-68166f2ef3bf",
+                "action": "sendSMS",
+                "options": {
+                  "payload": "Up and down... The interior of our elevators were last cleaned today at 3:20pm.\n\nThe lobby elevator area was last cleaned today at 3:30pm.\n\nWould you like info on other areas of the hotel? You can respond with the following:\n\nP for public areas\nR for restrooms\nM for room cleaning details",
+                  "originator": "{{recipient}}",
+                  "recipients": {
+                    "msisdns": [
+                      "{{originator}}"
+                    ]
+                  },
+                  "intent": "sendReply",
+                  "originatorType": "text"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{response}}",
+                "operator": "==",
+                "value": "M",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "6457f128-089d-464b-95b7-9e49cd163364",
+                "action": "sendSMS",
+                "options": {
+                  "payload": "More...... We wanted to let you know that your room (1205) was last cleaned on Tuesday, June 9, 2020 at 3:42pm for 35 minutes.\n\nVacuum cleaner used for 7 minutes and Electrostatic Sprayer used for 6 minutes.\n\nWould you like info on other areas of the hotel? You can respond with the following:\n\nP for public areas\nR for restrooms\nE for elevators",
+                  "originator": "{{recipient}}",
+                  "recipients": {
+                    "msisdns": [
+                      "{{originator}}"
+                    ]
+                  },
+                  "intent": "sendReply",
+                  "originatorType": "text"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{response}}",
+                "operator": "==",
+                "value": "R",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "0e6055a9-c5d0-4f38-937f-bd29ec510b6b",
+                "action": "sendSMS",
+                "options": {
+                  "payload": "Here's the latest... Our lobby restroom was last cleaned on Tuesday, June 9, 2020 at 4:12pm.\n\nThe first floor restroom was last cleaned today at 1:30pm.\n\nWould you like info on other areas of the hotel? You can respond with the following:\n\nP for public areas\nE for elevators\nM for room cleaning details",
+                  "originator": "{{recipient}}",
+                  "recipients": {
+                    "msisdns": [
+                      "{{originator}}"
+                    ]
+                  },
+                  "intent": "sendReply",
+                  "originatorType": "text"
+                }
+              }
+            ]
+          }
+        ],
+        "defaultCase": {
+          "steps": [
+            {
+              "id": "fb1cc15f-1351-46ba-89e0-ddc1a7414101",
+              "action": "sendSMS",
+              "options": {
+                "payload": "Sorry your reply was not recognised. Choose from the following options:\n\nP for public areas\nR for restrooms\nE for elevators\nM for room cleaning details",
+                "originator": "{{recipient}}",
+                "recipients": {
+                  "msisdns": [
+                    "{{originator}}"
+                  ]
+                },
+                "intent": "sendReply",
+                "originatorType": "text"
+              }
+            }
+          ]
+        },
+        "intent": "smsConditional"
+      }
+    },
+    {
+      "id": "483550f3-a83c-4b5f-b045-aa0638c8e0ef",
+      "action": "await",
+      "options": {
+        "source": "{{originator}}",
+        "target": "{{recipient}}",
+        "trigger": "onReceivedSMS",
+        "variables": {
+          "responseVar": "action"
+        },
+        "expiryAt": "3 hours",
+        "cases": [
+          {
+            "conditions": [
+              {
+                "variable": "{{awaitStatusVar}}",
+                "operator": "==",
+                "value": "replied"
+              }
+            ],
+            "steps": []
+          }
+        ],
+        "intent": "await"
+      }
+    },
+    {
+      "id": "da1f1eb6-5fa5-4007-b676-2cd75ebc3551",
+      "action": "switch",
+      "options": {
+        "cases": [
+          {
+            "conditions": [
+              {
+                "variable": "{{action}}",
+                "operator": "==",
+                "value": "R",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "936de3c8-0ff5-4022-aba4-8387821dd7dd",
+                "action": "jumpToStep",
+                "options": {
+                  "stepId": "0e6055a9-c5d0-4f38-937f-bd29ec510b6b",
+                  "intent": "jumpToStep"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{action}}",
+                "operator": "==",
+                "value": "M",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "05d0a356-6987-4b5c-a9ca-52a5dad998f7",
+                "action": "jumpToStep",
+                "options": {
+                  "stepId": "6457f128-089d-464b-95b7-9e49cd163364",
+                  "intent": "jumpToStep"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{action}}",
+                "operator": "==",
+                "value": "E",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "71896cdc-9873-4c05-b311-b06b78214ee7",
+                "action": "jumpToStep",
+                "options": {
+                  "stepId": "e325c1c3-8db5-4416-b966-68166f2ef3bf",
+                  "intent": "jumpToStep"
+                }
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "variable": "{{action}}",
+                "operator": "==",
+                "value": "P",
+                "options": {
+                  "intent": "messageContent"
+                }
+              }
+            ],
+            "steps": [
+              {
+                "id": "8cb5d639-e219-452d-957a-b12bbfbab306",
+                "action": "jumpToStep",
+                "options": {
+                  "stepId": "28095509-1c5e-41c7-90d1-568af6663e2d",
+                  "intent": "jumpToStep"
+                }
+              }
+            ]
+          }
+        ],
+        "defaultCase": {
+          "steps": [
+            {
+              "id": "2f838f94-e83d-4af5-99f8-db746516b322",
+              "action": "jumpToStep",
+              "options": {
+                "stepId": "fb1cc15f-1351-46ba-89e0-ddc1a7414101",
+                "intent": "jumpToStep"
+              }
+            }
+          ]
+        },
+        "intent": "smsConditional"
+      }
+    },
+    {
+      "id": "599f38fd-0ced-4e6a-88bb-521c77ff3abc",
+      "action": "endFlow",
+      "options": {
+        "intent": "endFlow"
+      }
+    }
+  ],
+  "published": true,
+  "createdAt": "2020-04-30T09:30:23.694877662Z",
+  "updatedAt": "2020-06-11T21:22:43.271450393Z",
+  "revisionCount": 88,
+  "insights": {
+    "cancelled": 0,
+    "expired": 0,
+    "failed": 0,
+    "finished": 0,
+    "inProgress": 0,
+    "total": 0
+  },
+  "isDefaultFlow": false
+}
