@@ -1,18 +1,22 @@
 [
     {
       "LocationTypeID": 1,
-      "Name": "GuestRoom"
+      "Name": "Room"
     },
     {
       "LocationTypeID": 2,
-      "Name": "PublicArea"
+      "Name": "Lobby"
     },
     {
       "LocationTypeID": 3,
-      "Name": "RestRoom"
+      "Name": "Roof"
     },
     {
       "LocationTypeID": 4,
-      "Name": "ElevatorLanding"
-    }
+      "Name": "Restrooms"
+    },
+    {
+      "LocationTypeID": 5,
+      "Name": "Elevators"
+    }    
 ]

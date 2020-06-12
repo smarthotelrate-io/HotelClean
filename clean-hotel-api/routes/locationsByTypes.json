@@ -2,104 +2,96 @@
     {
         "LocationID": 1,
         "Name": "Lobby",
-        "Type": "PublicArea"
+        "Type": "Lobby"
     },
     {
         "LocationID": 2,
         "Name": "Lounge",
-        "Type": "PublicArea"
+        "Type": "Lounge"
     },
     {
         "LocationID": 3,
-        "Name": "Rooftop",
-        "Type": "PublicArea"
+        "Name": "Roof",
+        "Type": "Roof"
     },
-
     {
         "LocationID": 4,
         "Name": "101",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 5,
         "Name": "102",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 6,
         "Name": "103",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
-
     {
         "LocationID": 7,
         "Name": "104",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 8,
         "Name": "105",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 9,
         "Name": "109",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 10,
         "Name": "201",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 11,
         "Name": "202",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 12,
         "Name": "203",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
-
     {
         "LocationID": 13,
         "Name": "204",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 14,
         "Name": "205",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
     {
         "LocationID": 15,
         "Name": "206",
-        "Type": "GuestRoom"
+        "Type": "Room"
     },
-
     {
         "LocationID": 16,
         "Name": "GroundFloorRestroom",
-        "Type": "Restroom"
+        "Type": "Restrooms"
     },
-
     {
         "LocationID": 17,
-        "Name": "FirstRestroom",
-        "Type": "Restroom"
+        "Name": "FirstFloorRestroom",
+        "Type": "Restrooms"
     },
-
     {
         "LocationID": 18,
         "Name": "Elevator1",
-        "Type": "ElevatorLanding"
+        "Type": "Elevators"
     },
-
     {
-        "LocationID": 18,
+        "LocationID": 19,
         "Name": "Elevator2",
-        "Type": "ElevatorLanding"
+        "Type": "Elevators"
     }
-    
 ]
