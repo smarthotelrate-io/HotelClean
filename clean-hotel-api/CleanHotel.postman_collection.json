@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "0b17c358-cc9e-4c2e-a0d7-297ae5a5132c",
+		"name": "CleanHotel",
+		"description": "API for getting cleaning data for a hotel property",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetLocationTypes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3099/api/cleanhotel/location_types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3099",
+					"path": [
+						"api",
+						"cleanhotel",
+						"location_types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLocationActivityByLocationName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3099/api/cleanhotel/location_activity/location/Lounge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3099",
+					"path": [
+						"api",
+						"cleanhotel",
+						"location_activity",
+						"location",
+						"Lounge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLocationActivityByHotelName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3099/api/cleanhotel/hotel_cleaning_data/Hilton London",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3099",
+					"path": [
+						"api",
+						"cleanhotel",
+						"hotel_cleaning_data",
+						"Hilton London"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLocationsByType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3099/api/cleanhotel/locations_type/Elevators",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3099",
+					"path": [
+						"api",
+						"cleanhotel",
+						"locations_type",
+						"Elevators"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
