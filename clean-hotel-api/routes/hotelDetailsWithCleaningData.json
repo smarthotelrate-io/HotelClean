@@ -3,7 +3,8 @@
     "Hotel": {
       "Name": "Hilton London",
       "Address": "129 Bayswater Road London  W2 4RJ United Kingdom",
-      "GDS": "16753",
+      "GDS": "Sabre",
+      "GDS_Code": "16753",
       "Spend": "63469",
       "Bookings": "212",
       "Nights": "85"
@@ -12,17 +13,17 @@
       {
         "LocationID": 1,
         "Name": "Lobby",
-        "Type": "Lobby"
+        "Type": "PublicArea"
       },
       {
         "LocationID": 2,
         "Name": "Lounge",
-        "Type": "Lounge"
+        "Type": "PublicArea"
       },
       {
         "LocationID": 3,
         "Name": "Roof",
-        "Type": "Roof"
+        "Type": "PublicArea"
       },
       {
         "LocationID": 4,
@@ -195,7 +196,7 @@
         "Description": "Vacuum Cleaner",
         "Start": "2020-06-01T11:31:07",
         "End": "2020-06-01T11:40:13"
-      }, 
+      },
       {
         "ActivityID": 11,
         "LocationID": 2,
@@ -484,7 +485,6 @@
         "Start": "2020-06-01T11:31:07",
         "End": "2020-06-01T11:40:13"
       }
-
     ]
   }
 ]

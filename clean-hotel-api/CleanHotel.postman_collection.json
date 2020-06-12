@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0b17c358-cc9e-4c2e-a0d7-297ae5a5132c",
+		"_postman_id": "6e9c3d87-ecbe-4121-b601-d2ac9dc53414",
 		"name": "CleanHotel",
 		"description": "API for getting cleaning data for a hotel property",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,15 +12,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3099/api/cleanhotel/location_types",
-					"protocol": "http",
+					"raw": "https://kleen.fixhotelrate.com/api/clean-hotel-api/location_types",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kleen",
+						"fixhotelrate",
+						"com"
 					],
-					"port": "3099",
 					"path": [
 						"api",
-						"cleanhotel",
+						"clean-hotel-api",
 						"location_types"
 					]
 				}
@@ -33,18 +34,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3099/api/cleanhotel/location_activity/location/Lounge",
-					"protocol": "http",
+					"raw": "https://kleen.fixhotelrate.com/api/clean-hotel-api/location_activity/location/FirstFloorRestroom",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kleen",
+						"fixhotelrate",
+						"com"
 					],
-					"port": "3099",
 					"path": [
 						"api",
-						"cleanhotel",
+						"clean-hotel-api",
 						"location_activity",
 						"location",
-						"Lounge"
+						"FirstFloorRestroom"
 					]
 				}
 			},
@@ -56,15 +58,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3099/api/cleanhotel/hotel_cleaning_data/Hilton London",
-					"protocol": "http",
+					"raw": "https://kleen.fixhotelrate.com/api/clean-hotel-api/hotel_cleaning_data/Hilton London",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kleen",
+						"fixhotelrate",
+						"com"
 					],
-					"port": "3099",
 					"path": [
 						"api",
-						"cleanhotel",
+						"clean-hotel-api",
 						"hotel_cleaning_data",
 						"Hilton London"
 					]
@@ -78,15 +81,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3099/api/cleanhotel/locations_type/Elevators",
-					"protocol": "http",
+					"raw": "https://kleen.fixhotelrate.com/api/clean-hotel-api/locations_type/Elevators",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"kleen",
+						"fixhotelrate",
+						"com"
 					],
-					"port": "3099",
 					"path": [
 						"api",
-						"cleanhotel",
+						"clean-hotel-api",
 						"locations_type",
 						"Elevators"
 					]

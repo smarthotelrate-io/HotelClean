@@ -2,77 +2,77 @@
     {
         "LocationID": 1,
         "Name": "Lobby",
-        "Type": "Lobby"
+        "Type": "PublicArea"
     },
     {
         "LocationID": 2,
         "Name": "Lounge",
-        "Type": "Lounge"
+        "Type": "PublicArea"
     },
     {
         "LocationID": 3,
         "Name": "Roof",
-        "Type": "Roof"
+        "Type": "PublicArea"
     },
     {
         "LocationID": 4,
         "Name": "101",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 5,
         "Name": "102",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 6,
         "Name": "103",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 7,
         "Name": "104",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 8,
         "Name": "105",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 9,
         "Name": "109",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 10,
         "Name": "201",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 11,
         "Name": "202",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 12,
         "Name": "203",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 13,
         "Name": "204",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 14,
         "Name": "205",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 15,
         "Name": "206",
-        "Type": "Room"
+        "Type": "Rooms"
     },
     {
         "LocationID": 16,
