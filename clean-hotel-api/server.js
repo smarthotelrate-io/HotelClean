@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const path = require('path');
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
+console.log(process.env.NODE_ENV );
 
 const PORT = process.env.PORT || 3099;
 const NODE_ENV = process.env.NODE_ENV || 'development';

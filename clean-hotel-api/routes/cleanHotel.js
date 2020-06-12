@@ -1,8 +1,24 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const { verify, sign, decode } = require('jsonwebtoken');
+const jwtSecret = process.env.JWT_SECRET;
 
 const router = express.Router();
+
+
+const verifyJwtToken = async (req, res, next) => {
+    try{
+      const token = req.headers['jwt-token']; 
+      console.log(token);
+      console.log(jwtSecret);
+      const decodedJWT = verify(token,jwtSecret);
+      console.log('Token verified successfully');
+      next();
+    }catch(e){
+      next(e)
+    }
+};
 
 const getAllLocationTypes = async (req, res, next) => {
   try {
@@ -70,6 +86,7 @@ const getHotelWithCleaningData = async (req, res, next) => {
   }
 };
 
+router.use(verifyJwtToken);
 router
   .route('/location_types')
   .get(getAllLocationTypes);
