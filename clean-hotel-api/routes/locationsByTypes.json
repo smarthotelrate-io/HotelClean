@@ -1,0 +1,105 @@
+[
+    {
+        "LocationID": 1,
+        "Name": "Lobby",
+        "Type": "PublicArea"
+    },
+    {
+        "LocationID": 2,
+        "Name": "Lounge",
+        "Type": "PublicArea"
+    },
+    {
+        "LocationID": 3,
+        "Name": "Rooftop",
+        "Type": "PublicArea"
+    },
+
+    {
+        "LocationID": 4,
+        "Name": "101",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 5,
+        "Name": "102",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 6,
+        "Name": "103",
+        "Type": "GuestRoom"
+    },
+
+    {
+        "LocationID": 7,
+        "Name": "104",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 8,
+        "Name": "105",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 9,
+        "Name": "109",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 10,
+        "Name": "201",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 11,
+        "Name": "202",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 12,
+        "Name": "203",
+        "Type": "GuestRoom"
+    },
+
+    {
+        "LocationID": 13,
+        "Name": "204",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 14,
+        "Name": "205",
+        "Type": "GuestRoom"
+    },
+    {
+        "LocationID": 15,
+        "Name": "206",
+        "Type": "GuestRoom"
+    },
+
+    {
+        "LocationID": 16,
+        "Name": "GroundFloorRestroom",
+        "Type": "Restroom"
+    },
+
+    {
+        "LocationID": 17,
+        "Name": "FirstRestroom",
+        "Type": "Restroom"
+    },
+
+    {
+        "LocationID": 18,
+        "Name": "Elevator1",
+        "Type": "ElevatorLanding"
+    },
+
+    {
+        "LocationID": 18,
+        "Name": "Elevator2",
+        "Type": "ElevatorLanding"
+    }
+    
+]

@@ -1,0 +1,18 @@
+[
+    {
+      "LocationTypeID": 1,
+      "Name": "GuestRoom"
+    },
+    {
+      "LocationTypeID": 2,
+      "Name": "PublicArea"
+    },
+    {
+      "LocationTypeID": 3,
+      "Name": "RestRoom"
+    },
+    {
+      "LocationTypeID": 4,
+      "Name": "ElevatorLanding"
+    }
+]

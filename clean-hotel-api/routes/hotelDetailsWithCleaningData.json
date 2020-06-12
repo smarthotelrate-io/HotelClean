@@ -1,0 +1,178 @@
+{
+    "Hotel": {
+      "Name": "Hilton London",
+      "Address": "129 Bayswater Road London  W2 4RJ United Kingdom",
+      "GDS": "16753"
+    },
+    "locationByTypes": [
+      {
+        "LocationID": 1,
+        "Name": "Lobby",
+        "Type": "PublicArea"
+      },
+      {
+        "LocationID": 2,
+        "Name": "Lounge",
+        "Type": "PublicArea"
+      },
+      {
+        "LocationID": 3,
+        "Name": "Rooftop",
+        "Type": "PublicArea"
+      },
+      {
+        "LocationID": 4,
+        "Name": "101",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 5,
+        "Name": "102",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 6,
+        "Name": "103",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 7,
+        "Name": "104",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 8,
+        "Name": "105",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 9,
+        "Name": "109",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 10,
+        "Name": "201",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 11,
+        "Name": "202",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 12,
+        "Name": "203",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 13,
+        "Name": "204",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 14,
+        "Name": "205",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 15,
+        "Name": "206",
+        "Type": "GuestRoom"
+      },
+      {
+        "LocationID": 16,
+        "Name": "GroundFloorRestroom",
+        "Type": "Restroom"
+      },
+      {
+        "LocationID": 17,
+        "Name": "FirstRestroom",
+        "Type": "Restroom"
+      },
+      {
+        "LocationID": 18,
+        "Name": "Elevator1",
+        "Type": "ElevatorLanding"
+      },
+      {
+        "LocationID": 18,
+        "Name": "Elevator2",
+        "Type": "ElevatorLanding"
+      }
+    ],
+    "activities": [
+      {
+        "ActivityID": 1,
+        "LocationID": 10,
+        "Type": "Staff",
+        "ID": 101681,
+        "Description": "Staff Visit",
+        "Start": "2020-06-03T11:11:03",
+        "End": "2020-06-03T11:47:23"
+      },
+      {
+        "ActivityID": 2,
+        "LocationID": 10,
+        "Type": "Asset",
+        "ID": 3,
+        "Description": "Cleaning Cart",
+        "Start": "2020-06-03T11:11:00",
+        "End": "2020-06-03T11:48:00"
+      },
+      {
+        "ActivityID": 3,
+        "LocationID": 10,
+        "Type": "Asset",
+        "ID": 4,
+        "Description": "Electrostatic Sprayer",
+        "Start": "2020-06-03T11:25:16",
+        "End": "2020-06-03T11:30:30"
+      },
+      {
+        "ActivityID": 4,
+        "LocationID": 10,
+        "Type": "Asset",
+        "ID": 2,
+        "Description": "Vacuum Cleaner",
+        "Start": "2020-06-01T11:31:07",
+        "End": "2020-06-01T11:40:13"
+      },
+      {
+        "ActivityID": 5,
+        "LocationID": 4,
+        "Type": "Staff",
+        "ID": 101681,
+        "Description": "Staff Visit",
+        "Start": "2020-06-03T11:11:03",
+        "End": "2020-06-03T11:47:23"
+      },
+      {
+        "ActivityID": 6,
+        "LocationID": 4,
+        "Type": "Asset",
+        "ID": 3,
+        "Description": "Cleaning Cart",
+        "Start": "2020-06-03T11:11:00",
+        "End": "2020-06-03T11:48:00"
+      },
+      {
+        "ActivityID": 7,
+        "LocationID": 4,
+        "Type": "Asset",
+        "ID": 4,
+        "Description": "Electrostatic Sprayer",
+        "Start": "2020-06-03T11:25:16",
+        "End": "2020-06-03T11:30:30"
+      },
+      {
+        "ActivityID": 8,
+        "LocationID": 4,
+        "Type": "Asset",
+        "ID": 2,
+        "Description": "Vacuum Cleaner",
+        "Start": "2020-06-01T11:31:07",
+        "End": "2020-06-01T11:40:13"
+      }
+    ]
+  }
