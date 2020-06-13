@@ -1,0 +1,569 @@
+{
+    "openapi": "3.0.2",
+    "servers": [
+        {
+            "url": "https://kleen.fixhotelrate.com/api/clean-hotel-api"  
+        }
+    ],
+    "info": {
+        "version": "1.0.0",
+        "title": "Clean Hotel API",
+        "contact": {
+            "email": "rama@smarthotelrate.io"
+        }
+    },
+    "paths": {
+        "/location_types": {
+            "get": {
+                "tags": [
+                    "Clean Hotel"
+                ],
+                "summary": "Get all location types",
+                "responses": {
+                    "200": {
+                        "description": " A list of location types",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationTypes"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/locations_type/{locationType}": {
+            "get": {
+                "tags": [
+                    "Clean Hotel"
+                ],
+                "summary": "Get all locations by type",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "locationType",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "Location type",
+                        "example": "Rooms or Elevators or PublicArea or Restrooms"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " A list of locations by type",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationsByType"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/location_activity/location/{locationName}": {
+            "get": {
+                "tags": [
+                    "Clean Hotel"
+                ],
+                "summary": "Get all cleanning activities by location name",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "locationName",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "101 or 102 or Elevator1 or Lobby or Lounge"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " A list of cleaning activities by location",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ActivitiesByLocation"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hotel_cleaning_data/{hotelName}": {
+            "get": {
+                "tags": [
+                    "Clean Hotel"
+                ],
+                "summary": "Get all cleaning data for a hotel property",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "hotelName",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "Hilton London"                       
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " Hotel cleaning details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/HotelCleaningData"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LocationTypes": {
+                "type": "array",
+                "title": "The root schema of GetLocationTypes response",
+                "description": "Array of location types.",
+                "default": [],
+                "example": [
+                    [
+                        {
+                            "LocationTypeID": 1,
+                            "Name": "Rooms"
+                        },
+                        {
+                            "LocationTypeID": 2,
+                            "Name": "PublicArea"
+                        }
+                    ]
+                ],                
+                "items": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "title": "The first anyOf schema",
+                            "description": "Location type",
+                            "default": {},
+                            "required": [
+                                "LocationTypeID",
+                                "Name"
+                            ],
+                            "additionalProperties": true,
+                            "properties": {
+                                "LocationTypeID": {
+                                    "type": "integer",
+                                    "title": "The LocationTypeID schema",
+                                    "description": "The ID of the location type.",
+                                    "default": 0
+                                },
+                                "Name": {
+                                    "type": "string",
+                                    "title": "The Name schema",
+                                    "description": "The name of the location type.",
+                                    "default": ""
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "LocationsByType": {
+                "type": "array",
+                "title": "The root schema of GetLocationsByType response",
+                "description": "The root schema comprises the entire JSON document.",
+                "default": [],
+                "example": [
+                    [
+                        {
+                            "LocationID": 4,
+                            "Name": "101",
+                            "Type": "Rooms"
+                        },
+                        {
+                            "LocationID": 5,
+                            "Name": "102",
+                            "Type": "Rooms"
+                        }
+                    ]
+                ],               
+                "items": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "title": "The first anyOf schema",
+                            "description": "A list of locations by the requested type.",
+                            "default": {},
+                            "required": [
+                                "LocationID",
+                                "Name",
+                                "Type"
+                            ],
+                            "additionalProperties": true,
+                            "properties": {
+                                "LocationID": {
+                                    "type": "integer",
+                                    "title": "The LocationID schema",
+                                    "description": "The ID of the location.",
+                                    "default": 0
+                                },
+                                "Name": {
+                                    "type": "string",
+                                    "title": "The Name schema",
+                                    "description": "The name of the location.",
+                                    "default": ""
+                                },
+                                "Type": {
+                                    "type": "string",
+                                    "title": "The Type schema",
+                                    "description": "The type of the location.",
+                                    "default": ""
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "ActivitiesByLocation": {
+                "type": "array",
+                "title": "The root schema of the GetActivitiesByLocation response",
+                "description": "A list of activities by location.",
+                "default": [],
+                "example": [
+                    {
+                        "ActivityID": 1,
+                        "LocationID": 1,
+                        "Type": "Asset",
+                        "ID": 1,
+                        "Description": "Electrostatic Sprayer",
+                        "Start": "2020-06-12T11:25:16",
+                        "End": "2020-06-12T11:30:30"
+                    },
+                    {
+                        "ActivityID": 2,
+                        "LocationID": 1,
+                        "Type": "Asset",
+                        "ID": 2,
+                        "Description": "Cleaning Cart",
+                        "Start": "2020-06-12T11:11:00",
+                        "End": "2020-06-12T11:48:00"
+                    } 
+                ],                
+                "items": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "title": "The first anyOf schema",
+                            "description": "Activity details.",
+                            "default": {},
+                            "required": [
+                                "ActivityID",
+                                "LocationID",
+                                "Type",
+                                "ID",
+                                "Description",
+                                "Start",
+                                "End"
+                            ],
+                            "additionalProperties": true,
+                            "properties": {
+                                "ActivityID": {
+                                    "type": "integer",
+                                    "title": "The ActivityID schema",
+                                    "description": "The ID of the activity.",
+                                    "default": 0
+                                },
+                                "LocationID": {
+                                    "type": "integer",
+                                    "title": "The LocationID schema",
+                                    "description": "The ID of the location.",
+                                    "default": 0
+                                },
+                                "Type": {
+                                    "type": "string",
+                                    "title": "The Type schema",
+                                    "description": "The type of the location.",
+                                    "default": ""
+                                },
+                                "ID": {
+                                    "type": "integer",
+                                    "title": "The ID schema",
+                                    "description": "",
+                                    "default": 0
+                                },
+                                "Description": {
+                                    "type": "string",
+                                    "title": "The Description schema",
+                                    "description": "Activity description.",
+                                    "default": ""
+                                },
+                                "Start": {
+                                    "type": "string",
+                                    "title": "The Start schema",
+                                    "description": "The start time of the activity.",
+                                    "default": ""
+                                },
+                                "End": {
+                                    "type": "string",
+                                    "title": "The End schema",
+                                    "description": "The end time of the activity.",
+                                    "default": ""
+                                }
+                            }
+                        }
+                    ]
+                }                
+            },
+            "HotelCleaningData" : {
+                "type": "object",
+                "title": "The root schema of the HotelCleaningData response",
+                "description": "The root schema comprises the entire JSON document.",
+                "default": {},
+                "example": [
+                    {
+                        "Hotel": {
+                            "Name": "Hilton London",
+                            "Address": "129 Bayswater Road London  W2 4RJ United Kingdom",
+                            "GDS": "Sabre",
+                            "GDS_Code": "16753"
+                        },
+                        "locationByTypes": [
+                            {
+                                "LocationID": 1,
+                                "Name": "Lobby",
+                                "Type": "PublicArea"
+                            },
+                            {
+                                "LocationID": 2,
+                                "Name": "100",
+                                "Type": "Room"
+                            },
+                            {
+                                "LocationID": 3,
+                                "Name": "101",
+                                "Type": "Room"
+                            },
+                            {
+                                "LocationID": 4,
+                                "Name": "Elevator1",
+                                "Type": "Elevators"
+                            }
+                        ],
+                        "activities": [
+                            {
+                                "ActivityID": 1,
+                                "LocationID": 1,
+                                "Type": "Staff",
+                                "ID": 1,
+                                "Description": "Staff Visit",
+                                "Start": "2020-06-14T11:10:03",
+                                "End": "2020-06-14T11:47:23"
+                            },
+                            {
+                                "ActivityID": 2,
+                                "LocationID": 1,
+                                "Type": "Asset",
+                                "ID": 2,
+                                "Description": "Cleaning Cart",
+                                "Start": "2020-06-14T11:11:00",
+                                "End": "2020-06-14T11:48:00"
+                            }
+                        ]
+                    }
+                ],
+                "required": [
+                    "Hotel",
+                    "locationByTypes",
+                    "activities"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                    "Hotel": {
+                        "type": "object",
+                        "title": "The Hotel schema",
+                        "description": "A hotel element consists of name, address GDS and GDS code.",
+                        "default": {},
+                        "required": [
+                            "Name",
+                            "Address",
+                            "GDS",
+                            "GDS_Code"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "Name": {
+                                "type": "string",
+                                "title": "The Name schema",
+                                "description": "The name of the hotel.",
+                                "default": ""
+                            },
+                            "Address": {
+                                "type": "string",
+                                "title": "The Address schema",
+                                "description": "The Address of the hotel.",
+                                "default": ""
+                            },
+                            "GDS": {
+                                "type": "string",
+                                "title": "The GDS schema",
+                                "description": "The GDS for the hotel.",
+                                "default": ""
+                            },
+                            "GDS_Code": {
+                                "type": "string",
+                                "title": "The GDS_Code schema",
+                                "description": "The GDS code for the hotel.",
+                                "default": ""
+                            }
+                        }
+                    },
+                    "locationByTypes": {
+                        "type": "array",
+                        "title": "The locationByTypes schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "object",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": {},
+                                    "required": [
+                                        "LocationID",
+                                        "Name",
+                                        "Type"
+                                    ],
+                                    "additionalProperties": true,
+                                    "properties": {
+                                        "LocationID": {
+                                            "type": "integer",
+                                            "title": "The LocationID schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": 0
+                                        },
+                                        "Name": {
+                                            "type": "string",
+                                            "title": "The Name schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        },
+                                        "Type": {
+                                            "type": "string",
+                                            "title": "The Type schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "activities": {
+                        "type": "array",
+                        "title": "The activities schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "object",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": {},
+                                    "required": [
+                                        "ActivityID",
+                                        "LocationID",
+                                        "Type",
+                                        "ID",
+                                        "Description",
+                                        "Start",
+                                        "End"
+                                    ],
+                                    "additionalProperties": true,
+                                    "properties": {
+                                        "ActivityID": {
+                                            "type": "integer",
+                                            "title": "The ActivityID schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": 0
+                                        },
+                                        "LocationID": {
+                                            "type": "integer",
+                                            "title": "The LocationID schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": 0
+                                        },
+                                        "Type": {
+                                            "type": "string",
+                                            "title": "The Type schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        },
+                                        "ID": {
+                                            "type": "integer",
+                                            "title": "The ID schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": 0
+                                        },
+                                        "Description": {
+                                            "type": "string",
+                                            "title": "The Description schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        },
+                                        "Start": {
+                                            "type": "string",
+                                            "title": "The Start schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        },
+                                        "End": {
+                                            "type": "string",
+                                            "title": "The End schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }                
+            }
+        },
+        "securitySchemes": {
+            "JWT_TOKEN": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "jwt-token"
+            }
+        }
+    },
+    "security": [
+        {
+            "JWT_TOKEN": []
+        }
+    ]
+}

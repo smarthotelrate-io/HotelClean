@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "examples": [
+        [
+            {
+                "LocationID": 4,
+                "Name": "101",
+                "Type": "Rooms"
+            },
+            {
+                "LocationID": 5,
+                "Name": "102",
+                "Type": "Rooms"
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "LocationID": 4,
+                        "Name": "101",
+                        "Type": "Rooms"
+                    }
+                ],
+                "required": [
+                    "LocationID",
+                    "Name",
+                    "Type"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                    "LocationID": {
+                        "$id": "#/items/anyOf/0/properties/LocationID",
+                        "type": "integer",
+                        "title": "The LocationID schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            4
+                        ]
+                    },
+                    "Name": {
+                        "$id": "#/items/anyOf/0/properties/Name",
+                        "type": "string",
+                        "title": "The Name schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "101"
+                        ]
+                    },
+                    "Type": {
+                        "$id": "#/items/anyOf/0/properties/Type",
+                        "type": "string",
+                        "title": "The Type schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Rooms"
+                        ]
+                    }
+                }
+            }
+        ],
+        "$id": "#/items"
+    }
+}

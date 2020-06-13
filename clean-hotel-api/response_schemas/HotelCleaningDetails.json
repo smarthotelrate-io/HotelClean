@@ -1,0 +1,382 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Hotel": {
+                "Name": "Hilton London",
+                "Address": "129 Bayswater Road London  W2 4RJ United Kingdom",
+                "GDS": "Sabre",
+                "GDS_Code": "16753"
+            },
+            "locationByTypes": [
+                {
+                    "LocationID": 1,
+                    "Name": "Lobby",
+                    "Type": "PublicArea"
+                },
+                {
+                    "LocationID": 2,
+                    "Name": "100",
+                    "Type": "Room"
+                },
+                {
+                    "LocationID": 3,
+                    "Name": "101",
+                    "Type": "Room"
+                },
+                {
+                    "LocationID": 4,
+                    "Name": "Elevator1",
+                    "Type": "Elevators"
+                }
+            ],
+            "activities": [
+                {
+                    "ActivityID": 1,
+                    "LocationID": 1,
+                    "Type": "Staff",
+                    "ID": 1,
+                    "Description": "Staff Visit",
+                    "Start": "2020-06-14T11:10:03",
+                    "End": "2020-06-14T11:47:23"
+                },
+                {
+                    "ActivityID": 2,
+                    "LocationID": 1,
+                    "Type": "Asset",
+                    "ID": 2,
+                    "Description": "Cleaning Cart",
+                    "Start": "2020-06-14T11:11:00",
+                    "End": "2020-06-14T11:48:00"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Hotel",
+        "locationByTypes",
+        "activities"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "Hotel": {
+            "$id": "#/properties/Hotel",
+            "type": "object",
+            "title": "The Hotel schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "Name": "Hilton London",
+                    "Address": "129 Bayswater Road London  W2 4RJ United Kingdom",
+                    "GDS": "Sabre",
+                    "GDS_Code": "16753",
+                    "Spend": "63469",
+                    "Bookings": "212",
+                    "Nights": "85"
+                }
+            ],
+            "required": [
+                "Name",
+                "Address",
+                "GDS",
+                "GDS_Code",
+                "Spend",
+                "Bookings",
+                "Nights"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "Name": {
+                    "$id": "#/properties/Hotel/properties/Name",
+                    "type": "string",
+                    "title": "The Name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Hilton London"
+                    ]
+                },
+                "Address": {
+                    "$id": "#/properties/Hotel/properties/Address",
+                    "type": "string",
+                    "title": "The Address schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "129 Bayswater Road London  W2 4RJ United Kingdom"
+                    ]
+                },
+                "GDS": {
+                    "$id": "#/properties/Hotel/properties/GDS",
+                    "type": "string",
+                    "title": "The GDS schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Sabre"
+                    ]
+                },
+                "GDS_Code": {
+                    "$id": "#/properties/Hotel/properties/GDS_Code",
+                    "type": "string",
+                    "title": "The GDS_Code schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "16753"
+                    ]
+                },
+                "Spend": {
+                    "$id": "#/properties/Hotel/properties/Spend",
+                    "type": "string",
+                    "title": "The Spend schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "63469"
+                    ]
+                },
+                "Bookings": {
+                    "$id": "#/properties/Hotel/properties/Bookings",
+                    "type": "string",
+                    "title": "The Bookings schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "212"
+                    ]
+                },
+                "Nights": {
+                    "$id": "#/properties/Hotel/properties/Nights",
+                    "type": "string",
+                    "title": "The Nights schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "85"
+                    ]
+                }
+            }
+        },
+        "locationByTypes": {
+            "$id": "#/properties/locationByTypes",
+            "type": "array",
+            "title": "The locationByTypes schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "LocationID": 1,
+                        "Name": "Lobby",
+                        "Type": "PublicArea"
+                    },
+                    {
+                        "LocationID": 2,
+                        "Name": "Lounge",
+                        "Type": "PublicArea"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/locationByTypes/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "LocationID": 1,
+                                "Name": "Lobby",
+                                "Type": "PublicArea"
+                            }
+                        ],
+                        "required": [
+                            "LocationID",
+                            "Name",
+                            "Type"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "LocationID": {
+                                "$id": "#/properties/locationByTypes/items/anyOf/0/properties/LocationID",
+                                "type": "integer",
+                                "title": "The LocationID schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "Name": {
+                                "$id": "#/properties/locationByTypes/items/anyOf/0/properties/Name",
+                                "type": "string",
+                                "title": "The Name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Lobby"
+                                ]
+                            },
+                            "Type": {
+                                "$id": "#/properties/locationByTypes/items/anyOf/0/properties/Type",
+                                "type": "string",
+                                "title": "The Type schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "PublicArea"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/locationByTypes/items"
+            }
+        },
+        "activities": {
+            "$id": "#/properties/activities",
+            "type": "array",
+            "title": "The activities schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "ActivityID": 1,
+                        "LocationID": 10,
+                        "Type": "Staff",
+                        "ID": 1,
+                        "Description": "Staff Visit",
+                        "Start": "2020-06-03T11:11:03",
+                        "End": "2020-06-03T11:47:23"
+                    },
+                    {
+                        "ActivityID": 2,
+                        "LocationID": 10,
+                        "Type": "Asset",
+                        "ID": 2,
+                        "Description": "Cleaning Cart",
+                        "Start": "2020-06-03T11:11:00",
+                        "End": "2020-06-03T11:48:00"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/activities/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "ActivityID": 1,
+                                "LocationID": 10,
+                                "Type": "Staff",
+                                "ID": 1,
+                                "Description": "Staff Visit",
+                                "Start": "2020-06-03T11:11:03",
+                                "End": "2020-06-03T11:47:23"
+                            }
+                        ],
+                        "required": [
+                            "ActivityID",
+                            "LocationID",
+                            "Type",
+                            "ID",
+                            "Description",
+                            "Start",
+                            "End"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "ActivityID": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/ActivityID",
+                                "type": "integer",
+                                "title": "The ActivityID schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "LocationID": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/LocationID",
+                                "type": "integer",
+                                "title": "The LocationID schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    10
+                                ]
+                            },
+                            "Type": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/Type",
+                                "type": "string",
+                                "title": "The Type schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Staff"
+                                ]
+                            },
+                            "ID": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/ID",
+                                "type": "integer",
+                                "title": "The ID schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "Description": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/Description",
+                                "type": "string",
+                                "title": "The Description schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Staff Visit"
+                                ]
+                            },
+                            "Start": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/Start",
+                                "type": "string",
+                                "title": "The Start schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "2020-06-03T11:11:03"
+                                ]
+                            },
+                            "End": {
+                                "$id": "#/properties/activities/items/anyOf/0/properties/End",
+                                "type": "string",
+                                "title": "The End schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "2020-06-03T11:47:23"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/activities/items"
+            }
+        }
+    }
+}

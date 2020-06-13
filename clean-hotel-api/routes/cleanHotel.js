@@ -86,7 +86,7 @@ const getHotelWithCleaningData = async (req, res, next) => {
   }
 };
 
-router.use(verifyJwtToken);
+// router.use(verifyJwtToken);
 router
   .route('/location_types')
   .get(getAllLocationTypes);

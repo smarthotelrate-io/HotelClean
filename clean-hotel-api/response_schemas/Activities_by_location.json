@@ -1,0 +1,145 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "examples": [
+        [
+            {
+                "ActivityID": 17,
+                "LocationID": 17,
+                "Type": "Asset",
+                "ID": 17,
+                "Description": "Electrostatic Sprayer",
+                "Start": "2020-06-03T11:25:16",
+                "End": "2020-06-03T11:30:30"
+            },
+            {
+                "ActivityID": 18,
+                "LocationID": 17,
+                "Type": "Asset",
+                "ID": 18,
+                "Description": "Vacuum Cleaner",
+                "Start": "2020-06-01T11:31:07",
+                "End": "2020-06-01T11:40:13"
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "ActivityID": 1,
+                        "LocationID": 1,
+                        "Type": "Asset",
+                        "ID": 1,
+                        "Description": "Electrostatic Sprayer",
+                        "Start": "2020-06-12T11:25:16",
+                        "End": "2020-06-12T11:30:30"
+                    },
+                    {
+                        "ActivityID": 2,
+                        "LocationID": 1,
+                        "Type": "Asset",
+                        "ID": 2,
+                        "Description": "Cleaning Cart",
+                        "Start": "2020-06-12T11:11:00",
+                        "End": "2020-06-12T11:48:00"
+                    }                    
+                ],
+                "required": [
+                    "ActivityID",
+                    "LocationID",
+                    "Type",
+                    "ID",
+                    "Description",
+                    "Start",
+                    "End"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                    "ActivityID": {
+                        "$id": "#/items/anyOf/0/properties/ActivityID",
+                        "type": "integer",
+                        "title": "The ActivityID schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            17
+                        ]
+                    },
+                    "LocationID": {
+                        "$id": "#/items/anyOf/0/properties/LocationID",
+                        "type": "integer",
+                        "title": "The LocationID schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            17
+                        ]
+                    },
+                    "Type": {
+                        "$id": "#/items/anyOf/0/properties/Type",
+                        "type": "string",
+                        "title": "The Type schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Asset"
+                        ]
+                    },
+                    "ID": {
+                        "$id": "#/items/anyOf/0/properties/ID",
+                        "type": "integer",
+                        "title": "The ID schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            17
+                        ]
+                    },
+                    "Description": {
+                        "$id": "#/items/anyOf/0/properties/Description",
+                        "type": "string",
+                        "title": "The Description schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Electrostatic Sprayer"
+                        ]
+                    },
+                    "Start": {
+                        "$id": "#/items/anyOf/0/properties/Start",
+                        "type": "string",
+                        "title": "The Start schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "2020-06-03T11:25:16"
+                        ]
+                    },
+                    "End": {
+                        "$id": "#/items/anyOf/0/properties/End",
+                        "type": "string",
+                        "title": "The End schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "2020-06-03T11:30:30"
+                        ]
+                    }
+                }
+            }
+        ],
+        "$id": "#/items"
+    }
+}
