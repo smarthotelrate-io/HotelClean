@@ -7,7 +7,7 @@ Repo for TravelScrum Hackerton
 
 ## The example UI
 
-[This json](https://github.com/smarthotelrate-io/HotelClean/blob/master/Export%20of%20TravelScrum%20Hackerton.json)
+[This UI](https://github.com/smarthotelrate-io/HotelClean/tree/master/HotelClean-UI) has been developed to show how the data could be presented on a hotel web site or a 3rd party like a Duty of Care provider
 
 ## The Bot (SMS only)
 
