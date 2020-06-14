@@ -3,7 +3,7 @@ Repo for TravelScrum Hackerton
 
 ## The API
 
-[The API](https://github.com/smarthotelrate-io/HotelClean/tree/master/clean-hotel-api) communicates witha 3rd party provider of the raw cleaning data for a hotel property. Our API add GDS data on top, so that it have a address details, GDS codes etc as part of the cleaning data and as such can be used in a corporate travel envrionment.
+[The API](https://github.com/smarthotelrate-io/HotelClean/tree/master/clean-hotel-api) communicates witha 3rd party provider of the raw cleaning data for a hotel property. Our API add GDS data on top, so that it have a address details, GDS codes etc as part of the cleaning data and as such can be used in a corporate travel environment.
 
 ## The example UI
 
