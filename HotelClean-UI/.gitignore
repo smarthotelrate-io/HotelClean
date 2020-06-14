@@ -1,0 +1,11 @@
+.idea
+node_modules
+*.log
+lib
+coverage
+dist
+/dist
+buildClient
+/buildClient
+buildServer
+/buildServer

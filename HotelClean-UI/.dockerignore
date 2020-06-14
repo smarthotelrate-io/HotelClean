@@ -1,0 +1,6 @@
+.docker_host
+.git
+.gitignore
+proxy
+README.md
+node_modules

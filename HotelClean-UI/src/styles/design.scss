@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400+700);
+/*
+We'll need to import Normalize.css and AvertaPE
+https://necolas.github.io/normalize.css/
+https://smarthotelrate.io/wp-content/themes/markup/myfontswebfontskit.css
+*/
+
+/* CSS Variables */
+
+:root {
+  --gray-1: #20123A;
+  --gray-2: #5B5862;
+  --gray-3: #9A989D;
+  --gray-4: #C0C0C0;
+  --gray-5: #E0E0E0;
+  --gray-6: #EFEFEF;
+  --blue: #0078FF;
+  --green: #2DBA2D;
+  --red: #CC3333;
+  --orange: #FF9933;
+  --purple-1: #5B5DC1;
+  --purple-2: #8574E9;
+  --purple-3: #A47DF7;
+  --chat-them: #E5E5EA;
+}
+
+/* Layout */
+
+.container {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.branding {
+  width: 1224px;
+  margin: auto;
+}
+
+.content {
+  width: 1224px;
+  margin: 0 auto 50px;
+}
+
+.example {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1224px;
+  min-height: 100px;
+}
+
+.secondary {
+  flex: 0 0 33%;
+  margin-left: 25px;
+  padding-left: 25px;
+  border-left: 1px solid var(--gray-5);
+}
+
+.secondary:first-child {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Content */
+a {
+  color: var(--blue);
+}
+
+body {
+  font-family: AvertaPE-Regular;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--gray-1);
+}
+
+h3 {
+  font-family: AvertaPE-Bold;
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--gray-2);
+}
+
+em {
+  font-family: AvertaPE-Italic;
+}
+
+strong {
+  font-family: AvertaPE-Bold;
+}
+
+.top {
+  background: rgb(212,175,234);
+  background: linear-gradient(140deg, rgba(212,175,234,1) 0%, rgba(164,125,247,1) 100%);
+  display: block;
+  padding: 30px 0 10px;
+  margin-bottom: 50px;
+}
+
+.tagline {
+  color: var(--gray-2);
+  margin-top: 0;
+}
+
+.description p {
+  color: var(--gray-1);
+  font-size: 24px;
+  width: 70%;
+}
+.description p.small {
+  font-size: 18px;
+}
+
+.how h3 {
+  font-family: AvertaPE-Bold;
+}
+
+.btn {
+  background: var(--gray-6);
+  border: 1px solid var(--gray-5);
+  border-radius: 4px;
+  color: var(--gray-1);
+  font-family: AvertaPE-SemiBold;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 5px 3px;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.btn:hover, .btn:focus {
+  background: var(--gray-5);
+}
+.btn.selected {
+  background: var(--blue);
+  color: white;
+}
+.webapp-nav {
+  display: block;
+  margin: 50px 0;
+}
+.webapp {
+  text-align: left;
+  width: 100%;
+}
+.webapp th {
+  font-family: AvertaPE-SemiBold;
+  font-size: 14px;
+  color: var(--gray-3);
+}
+.webapp td, .webapp th {
+  border-bottom: 1px solid var(--gray-5);
+  padding: 10px;
+}
+
+.dashboard .illustration {
+  width: 70%;
+}
+
+/* SMS + Reset */
+
+ol, li, blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+  quotes: none;
+}
+
+
+
+.chat {
+  font-family: "Open Sans", sanserif;
+}
+
+.chat blockquote {
+  color: #000;
+  line-height: 1.7;
+  max-width: 75%;
+  margin-bottom: 0.5ex;
+  display: inline-block;
+  padding: 0.5ex 1em;
+  border-radius: 1.5ex/1em;
+  position: relative;
+  box-shadow: 0 15px 1px -12px rgba(0,0,0,0.05);
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+.chat .them, .chat .me { margin-bottom: 1ex; }
+.chat .them { text-align: left; }
+.chat .me { text-align: right; }
+
+blockquote:last-child::before {
+  display:block;
+  position: absolute;
+  z-index: -999;
+  border: 1ex solid transparent;
+  bottom: 0;
+  border-radius: 1em/1ex;
+}
+
+.chat .them blockquote { background-color: var(--chat-them); }
+.chat .them blockquote:last-child::before {
+  border-bottom-color: var(--chat-them);
+  border-right-color: var(--chat-them);
+  left: -0.8ex;
+  content: "";
+}
+
+.chat .typing blockquote {
+  background-color: var(--chat-them);
+  font-weight: bold;
+  color: #666;
+}
+
+.chat .typing blockquote:last-child::before {
+  border-color: var(--chat-them);
+  border-width: 0.6ex;
+  border-radius: 0.6ex;
+  left: -0.2ex;
+  box-shadow: -1.1ex 0.3ex 0 -0.3ex var(--chat-them);
+  content: "";
+}
+
+.chat .me blockquote {
+  background-color: #007AFF;
+  background-image: linear-gradient(180deg,#007AFF,#1D62F0);
+  color: white;
+}
+
+.chat .me blockquote:last-child::before {
+  content: "";
+  right: -0.8ex;
+  border-bottom-color: #1D62F0;
+  border-left-color: #1D62F0;
+}
+
+.example h6 {
+  font-size: .7em;
+  text-align: center;
+  margin: 1em 0;
+  color: var(--chat-them);
+}
+
+.ui.table.table-no-border {
+  border:0;
+}
+
+
+.ui.table.table-no-border thead th{
+  background-color: white;
+  border: 0px;
+}
+
+.webapp th {
+  font-family: AvertaPE-SemiBold;
+  font-size: 14px;
+  color: var(--gray-3);
+}
+.webapp td, .webapp th {
+  border-bottom: 1px solid var(--gray-5);
+  padding: 10px;
+}
+
+.list-property-name {
+  font-size: 28px;
+  font-family: AvertaPE-SemiBold;
+  color: var(--gray-1);
+  display: block;
+  margin-bottom: 0px;
+}
+.list-property-location {
+  font-size: 18px;
+  font-family: AvertaPE-Italic;
+  color: var(--gray-3);
+  display: block;
+}
+.webapp-container {
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.35);
+}
