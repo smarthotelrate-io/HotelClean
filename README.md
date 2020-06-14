@@ -1,5 +1,5 @@
 # HotelClean
-Repo for TravelScrum Hackerton
+Repo for TravelScrum Hackerton 11 -14th of June 2020.
 
 ## The API
 
