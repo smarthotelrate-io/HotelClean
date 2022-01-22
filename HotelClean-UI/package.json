@@ -54,7 +54,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "moment-range": "^4.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "query-string": "^6.10.1",
